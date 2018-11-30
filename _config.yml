@@ -1,5 +1,4 @@
 # Dependencies
-markdown:         redcarpet
 highlighter:      rouge
 
 # Permalinks
@@ -25,6 +24,6 @@ version:          0.1.0
 github:
   repo:           https://github.com/kratsg/deaf-owned-businesses
 
-plugins:
+plugins_dir:
   - jekyll-paginate
   - jekyll-gist
