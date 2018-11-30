@@ -11,7 +11,7 @@ title:            Deaf-Owned Businesses
 tagline:          'Support Deaf Today!'
 description:      'A curating of Deaf-Owned Businesses. Not guaranteed to be perfect. Made by <a href="https://twitter.com/kratsg" target="_blank">@kratsg</a>.'
 url:              https://kratsg.github.io/deaf-owned-businesses/
-baseurl:          /
+baseurl:          /deaf-owned-businesses/
 
 author:
   name:           'Giordon Stark'
