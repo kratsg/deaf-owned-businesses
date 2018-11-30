@@ -6,9 +6,9 @@ permalink:        pretty
 #relative_permalinks: true
 
 # Setup
-title:            Deaf-Owned Businesses
+title:            '#DeafBiz'
 tagline:          'Support Deaf Today!'
-description:      'A curating of Deaf-Owned Businesses. Not guaranteed to be perfect. Made by <a href="https://twitter.com/kratsg" target="_blank">@kratsg</a>.'
+description:      'A curating of Deaf-Owned Businesses #trubiz. Not guaranteed to be perfect. Made by <a href="https://twitter.com/kratsg" target="_blank">@kratsg</a>.'
 url:              https://kratsg.github.io/deaf-owned-businesses/
 baseurl:          /deaf-owned-businesses/
 
