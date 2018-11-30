@@ -1,0 +1,30 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            Deaf-Owned Businesses
+tagline:          'Support Deaf Today!'
+description:      'A curating of Deaf-Owned Businesses. Not guaranteed to be perfect. Made by <a href="https://twitter.com/kratsg" target="_blank">@kratsg</a>.'
+url:              https://kratsg.github.io/deaf-owned-businesses
+baseurl:          /
+
+author:
+  name:           'Giordon Stark'
+  url:            https://twitter.com/kratsg
+
+paginate:         5
+
+# Custom vars
+version:          0.0.1
+
+github:
+  repo:           https://github.com/kratsg/deaf-owned-businesses
+
+plugins:
+  - jekyll-paginate
+  - jekyll-gist

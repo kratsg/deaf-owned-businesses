@@ -1,0 +1,31 @@
+---
+layout: default
+title: Home
+---
+
+<div id="biz-list">
+  <div id="search">
+    <input class="search" placeholder="biz name" />
+    <button class="sort" data-sort="name">Sort by name</button>
+  </div>
+
+  <ul class="list">
+  {% for biz in site.data.businesses %}
+    <li>
+      <a href="{{ biz.url }}">
+        <span class="name">
+          {{ biz.name }}
+        </span>
+      </a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<script type="text/javascript">
+var options = {
+      valueNames: [ 'name' ]
+};
+
+var bizList = new List('biz-list', options);
+</script>
