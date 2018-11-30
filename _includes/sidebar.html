@@ -26,7 +26,7 @@
         {% endif %}
       {% endfor %}
 
-      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
+      <span class="sidebar-nav-item">Last updated: {% last_modified_at %}</span>
     </nav>
 
     <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
