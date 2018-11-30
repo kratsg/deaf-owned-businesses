@@ -249,6 +249,32 @@ a.sidebar-nav-item:focus {
   color: #8f5536;
 }
 
+#biz-list #new-biz {
+  color: #ccc;
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#biz-list #new-biz a {
+  display: inline-block;
+  text-decoration: none;
+  color: #93c7eb;
+}
+
+#biz-list #new-biz a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #aaa;
+  transition: width .3s;
+}
+
+#biz-list #new-biz a:hover::after {
+  width: 100%;
+}
+
 #biz-list #search {
     display: flex;
     flex-direction: row;
