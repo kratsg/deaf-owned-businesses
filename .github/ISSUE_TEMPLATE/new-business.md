@@ -6,8 +6,9 @@ title: New Business Request
 ---
 
 ```
-- location:
+- category:
+  comments:
+  location:
   name:
   url:
-  comments:
 ```
