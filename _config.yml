@@ -28,4 +28,3 @@ github:
 plugins:
   - jekyll-paginate
   - jekyll-gist
-  - jekyll-last-modified-at
