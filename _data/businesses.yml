@@ -18,7 +18,7 @@
   name: Jennifer Tandoc Artist
   url: https://www.facebook.com/JT9Artist/
 
-- location: ' Chicago, Illinois'
+- location: 'Chicago, Illinois'
   name: OkBritknee Photography
   url: https://www.facebook.com/OkBritkneephotography/
 
@@ -50,11 +50,11 @@
   name: Sean Forbes
   url: https://www.facebook.com/deafandloud/
 
-- location: ' Bay Area, California'
+- location: 'Bay Area, California'
   name: Vinny Valdez Tattoo
   url: https://www.facebook.com/vinztattoos/
 
-- location: ' Kalamzoo, Michigan'
+- location: 'Kalamzoo, Michigan'
   name: Bearwood Reclaimed Furniture
   url: https://www.facebook.com/BearwoodreclaimedFurniture/
 
@@ -66,11 +66,11 @@
   name: Fiksu Design
   url: https://www.facebook.com/FIksuDesign/
 
-- location: ' Phoenix, Arizona'
+- location: 'Phoenix, Arizona'
   name: Jessica Madsen Photography
   url: https://www.facebook.com/jessicamadsenphotography/
 
-- location: ' Indianapolis, Indiana'
+- location: 'Indianapolis, Indiana'
   name: Forever Ten Photography
   url: https://www.facebook.com/ForeverTenPhotography/
 
@@ -82,19 +82,19 @@
   name: Deaf Planet Soul
   url: https://www.facebook.com/DeafPlanetSoul/
 
-- location: ' Gonzales, Louisiana'
+- location: 'Gonzales, Louisiana'
   name: Tate Tullier Photography
   url: https://www.facebook.com/tatetullierphotography/
 
-- location: ' Staunton, Virginia & Rochester, New York'
+- location: 'Staunton, Virginia & Rochester, New York'
   name: Five. Twenty One. Photography
   url: https://www.facebook.com/fivetwentyonephotography/
 
-- location: ' WY/SD/CO '
+- location: 'WY/SD/CO '
   name: Silent Hands Photography
   url: https://www.facebook.com/silenthandsphotography/
 
-- location: ' Lampasas, Texas'
+- location: 'Lampasas, Texas'
   name: Howe High Tree Service
   url: https://www.facebook.com/HoweHighTreeService/
 
@@ -110,15 +110,15 @@
   name: Pepperbox Coffee
   url: https://www.facebook.com/pepperboxcoffee/
 
-- location: ' Indianapolis, Indiana'
+- location: 'Indianapolis, Indiana'
   name: NatStar Dogsitting
   url: https://www.facebook.com/NatCbroderick/
 
-- location: ' Chicago, Illinois'
+- location: 'Chicago, Illinois'
   name: Rosemary Edwards Photo Arts
   url: https://www.facebook.com/RosemaryEdwardsPhotoArts/
 
-- location: ' Chicago, Illinois'
+- location: 'Chicago, Illinois'
   name: CR Construction Inc.
   url: https://www.facebook.com/CrConstructionInc/
 
@@ -130,7 +130,7 @@
   name: Kissfist Biz
   url: https://www.facebook.com/Kissfist-Biz-1005427939625372/
 
-- location: ' currently traveling abroad'
+- location: 'currently traveling abroad'
   name: Clare Cassidy Photography
   url: https://www.facebook.com/clarecassidyphotography/
 
@@ -138,7 +138,7 @@
   name: MozzeriaSF
   url: https://www.facebook.com/MozzeriaSF/
 
-- location: ' Seattle, Washington'
+- location: 'Seattle, Washington'
   name: Ketaverse
   url: https://www.facebook.com/ketaverse/
 
@@ -146,15 +146,15 @@
   name: Kissfist DEAF
   url: https://www.facebook.com/kissfistdeaf/
 
-- location: ' Austin, Texas'
+- location: 'Austin, Texas'
   name: Crepe Crazy
   url: https://www.facebook.com/crepecrazyatx/
 
-- location: ' Warren, Michigan'
+- location: 'Warren, Michigan'
   name: Life behind D's Eyes Photography
   url: https://www.facebook.com/LifeBehindDsEyesPhotography/
 
-- location: ' Austin, Texas'
+- location: 'Austin, Texas'
   name: Silent Automotive
   url: https://www.facebook.com/SilentAuto/
 
@@ -162,11 +162,11 @@
   name: Toby Fitch Studios
   url: https://www.facebook.com/tobyfitchstudios/
 
-- location: ' Hyattsville, Maryland '
+- location: 'Hyattsville, Maryland '
   name: Streetcar 82 Brewing Co.
   url: https://www.facebook.com/Streetcar82/
 
-- location: ' Murray, Utah'
+- location: 'Murray, Utah'
   name: All About Pallets
   url: https://www.facebook.com/AllAboutPallets/
 
@@ -174,11 +174,11 @@
   name: Hands Land
   url: https://www.facebook.com/Hands-Land-371416306351412/
 
-- location: ' Dublin, California'
+- location: 'Dublin, California'
   name: Barker Heating & Cooling
   url: https://www.facebook.com/BarkerHeatingCooling/
 
-- location: ' Massachusetts'
+- location: 'Massachusetts'
   name: Expressions Art Bar
   url: https://www.facebook.com/ExpressionsARTBAR/
 
@@ -186,7 +186,7 @@
   name: Mastyl Signs & Designs - mastylsigns.com
   url: https://www.facebook.com/MastylSigns/
 
-- location: ' Washington D.C.'
+- location: 'Washington D.C.'
   name: Copper & Water
   url: https://www.facebook.com/copperandwater/
 
@@ -194,10 +194,15 @@
   name: Fuzzy Wuzzy Design
   url: https://www.facebook.com/fuzzywuzzydesign/
 
-- location: ' Frederick, Maryland'
+- location: 'Frederick, Maryland'
   name: TMGSfotography
   url: https://www.facebook.com/TMGSfotography/
 
 - location: null
   name: deafroot
   url: https://deafroot.com
+
+- location: 'Miami, FL'
+  name: Ferrer Apparel
+  url: www.FerrerApparel.com
+  comments: 'Custom Design Tee for Kids & Adults (IG & FB: FerrerApparel)'
