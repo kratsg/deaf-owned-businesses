@@ -17,6 +17,12 @@ title: Home
           {{ biz.name }}
         </span>
       </a>
+      {% if biz.location %}
+        in
+        <span class="location">
+          {{ biz.location }}
+        </span>
+      {% endif %}
     </li>
   {% endfor %}
   </ul>
@@ -24,7 +30,7 @@ title: Home
 
 <script type="text/javascript">
 var options = {
-      valueNames: [ 'name' ]
+      valueNames: [ 'name', 'location' ]
 };
 
 var bizList = new List('biz-list', options);
