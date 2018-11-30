@@ -56,9 +56,9 @@ function get_business_file(ref){
   return JSON.parse(json);
 }
 
-function update_business_file(content, sha, branch_name, name, email){
+function update_business_file(content, sha, branch_name, bizname, name, email){
   var payload = {
-    "message": "add new business",
+    "message": "add new business " + bizname,
     "committer": {
       "name": name,
       "email": email
@@ -102,8 +102,24 @@ function add_new_business(bizname, new_business, body, timestamp, name, email){
   Logger.log(business_file['content']);
   Logger.log(Utilities.base64Decode(business_file['content']));
   var content = Utilities.base64Encode(Utilities.newBlob(Utilities.base64Decode(business_file['content'], Utilities.Charset.UTF_8)).getDataAsString()+"\n"+new_business, Utilities.Charset.UTF_8);
-  update_business_file(content, business_file['sha'], branch_name, name, email);
+  update_business_file(content, business_file['sha'], branch_name, bizname, name, email);
   create_pull_request(branch_name, bizname, body);
+}
+
+function create_issue(bizname, body){
+  var payload = {
+    "title": "Add "+bizname,
+    "body": body,
+    "labels": ["google forms", "enhancement", "good first issue", "help wanted"]
+  };
+
+  var options = {
+    "method": "POST",
+    "contentType": "application/json",
+    "payload": JSON.stringify(payload),
+    "headers": {"Accept": "application/vnd.github.v3+json"}
+  };
+  var response = UrlFetchApp.fetch(ghURI + "/issues?access_token="+ghToken, options);
 }
 
 function onFormSubmit(e) {
