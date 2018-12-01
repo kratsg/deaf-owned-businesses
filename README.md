@@ -44,7 +44,29 @@ function create_branch(branch_name){
   var response = UrlFetchApp.fetch(ghURI + "/git/refs?access_token="+ghToken, options);
 }
 
-function create_business_file(branch_name, biz_obj, timestamp, name, email){
+function update_business_file(filename, branch_name, biz_obj, sha, timestamp, name, email){
+  var payload = {
+    "message": "update existing business " + biz_obj['name'],
+    "committer": {
+      "name": name,
+      "email": email
+    },
+    "branch": branch_name,
+    "content": Utilities.base64Encode(JSON.stringify(biz_obj, null, 4), Utilities.Charset.UTF_8),
+    "sha": sha
+  };
+  var options = {
+    "method": "PUT",
+    "contentType": "application/json",
+    "payload": JSON.stringify(payload),
+    "headers": {"Accept": "application/vnd.github.v3+json"}
+  };
+
+  var response = UrlFetchApp.fetch(ghURI + "/contents/_data/businesses/"+filename+".json?access_token="+ghToken, options);
+}
+
+
+function create_business_file(filename, branch_name, biz_obj, timestamp, name, email){
   var payload = {
     "message": "add new business " + biz_obj['name'],
     "committer": {
@@ -62,18 +84,40 @@ function create_business_file(branch_name, biz_obj, timestamp, name, email){
     "headers": {"Accept": "application/vnd.github.v3+json"}
   };
 
-  var filename = Utilities.formatDate(new Date("11/30/2018 14:56:16"), "GMT", "YY-MM-dd") + "-" + sanitize_string(biz_obj['name'].replace(/[\s]+/g,'-'));
   var response = UrlFetchApp.fetch(ghURI + "/contents/_data/businesses/"+filename+".json?access_token="+ghToken, options);
 }
 
-function create_pull_request(branch_name, biz_obj, timestamp, name, email){
-  var body = "```\n" + JSON.stringify(biz_obj, null, 4) + "\n" +
-             "```\n\n" +
+function create_or_update_business_file(branch_name, biz_obj, timestamp, name, email){
+  var options = {
+    "method": "GET",
+    "contentType": "application/json",
+    "headers": {"Accept": "application/vnd.github.v3+json"},
+    "muteHttpExceptions": true
+  };
+  var filename = sanitize_string(biz_obj['name'].replace(/[\s]+/g,'-'));
+  var response = UrlFetchApp.fetch(ghURI + "/contents/_data/businesses/"+filename+".json?access_token="+ghToken, options);
+
+  // file doesn't exist, create it
+  if(response.getResponseCode() == 404){
+    create_business_file(filename, branch_name, biz_obj, timestamp, name, email);
+    return "add";
+  }
+  // file exists, update it
+  else if(response.getResponseCode() == 200){
+    var json = response.getContentText();
+    var data = JSON.parse(json);
+    update_business_file(filename, branch_name, biz_obj, data['sha'], timestamp, name, email);
+    return "update";
+  }
+}
+
+function create_pull_request(branch_name, biz_obj, add_or_update, timestamp, name, email){
+  var body = "Please " + add_or_update + " " + biz_obj['name'] + ". Thanks.\n\n" +
              "Submitted by [" + name + "](mailto:" + email + ") at " + timestamp + " from [DeafBiz Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdFPZyanfu-_nkWpKKwIIk15NzeoBXgkg5xSp4c5CrBlSoARw/viewform) automatically.";
 
   var payload = {
-    "title": "Add "+biz_obj['name'],
-    "body": "Please add " + biz_obj['name'] + " to the list of businesses. Thanks.\n\n" + body,
+    "title": add_or_update.charAt(0).toUpperCase() + add_or_update.slice(1) + " " + biz_obj['name'],
+    "body": body,
     "head": branch_name,
     "base": "master"
   };
@@ -87,11 +131,11 @@ function create_pull_request(branch_name, biz_obj, timestamp, name, email){
   var response = UrlFetchApp.fetch(ghURI + "/pulls?access_token="+ghToken, options);
 }
 
-function add_new_business(biz_obj, timestamp, name, email){
+function add_or_update_business(biz_obj, timestamp, name, email){
   var branch_name = "add/business/"+sanitize_string(biz_obj['name'])+"/"+sanitize_string(timestamp);
   create_branch(branch_name);
-  create_business_file(branch_name, biz_obj, timestamp, name, email);
-  create_pull_request(branch_name, biz_obj, timestamp, name, email);
+  var add_or_update = create_or_update_business_file(branch_name, biz_obj, timestamp, name, email);
+  create_pull_request(branch_name, biz_obj, add_or_update, timestamp, name, email);
 }
 
 function onFormSubmit(e) {
@@ -110,8 +154,9 @@ function onFormSubmit(e) {
                  "comments": comments,
                  "location": location,
                  "name": bizname,
-                 "url": url};
+                 "url": url,
+                 "lastUpdated": timestamp};
 
-  add_new_business(biz_obj, timestamp, name, email);
+  add_or_update_business(biz_obj, timestamp, name, email);
 }
 ```
