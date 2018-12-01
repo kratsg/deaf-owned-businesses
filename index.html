@@ -13,8 +13,9 @@ title: Home
   </div>
 
   <ul class="list">
-  {% for biz in site.data.businesses %}
-    <li>
+  {% for biz_hash in site.data.businesses %}
+  {% assign biz = biz_hash[1] %}
+  <li id="{{biz_hash[0]}}">
       <a href="{{ biz.url }}">
         <span class="name">
           {{ biz.name }}
