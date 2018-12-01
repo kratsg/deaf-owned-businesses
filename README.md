@@ -66,8 +66,8 @@ function create_business_file(branch_name, biz_obj, timestamp, name, email){
   var response = UrlFetchApp.fetch(ghURI + "/contents/_data/businesses/"+filename+".json?access_token="+ghToken, options);
 }
 
-function create_pull_request(branch_name, biz_obj){
-  var body = "```\n" + JSON.stringify(biz_obj, null, 4) +
+function create_pull_request(branch_name, biz_obj, timestamp, name, email){
+  var body = "```\n" + JSON.stringify(biz_obj, null, 4) + "\n" +
              "```\n\n" +
              "Submitted by [" + name + "](mailto:" + email + ") at " + timestamp + " from [DeafBiz Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdFPZyanfu-_nkWpKKwIIk15NzeoBXgkg5xSp4c5CrBlSoARw/viewform) automatically.";
 
@@ -91,7 +91,7 @@ function add_new_business(biz_obj, timestamp, name, email){
   var branch_name = "add/business/"+sanitize_string(biz_obj['name'])+"/"+sanitize_string(timestamp);
   create_branch(branch_name);
   create_business_file(branch_name, biz_obj, timestamp, name, email);
-  create_pull_request(branch_name, biz_obj);
+  create_pull_request(branch_name, biz_obj, timestamp, name, email);
 }
 
 function onFormSubmit(e) {
