@@ -15,7 +15,7 @@ title: Home
   <ul class="list">
   {% for biz_hash in site.data.businesses %}
   {% assign biz = biz_hash[1] %}
-  <li id="{{biz_hash[0]}}">
+  <li id="{{biz_hash[0]}}" data-comments="{{ biz.comments }}" data-category="{{ biz.category }}">
       <a href="{{ biz.url }}?utm_source=kratsg.github.io&utm_campaign=deafbiz&utm_medium=mainpage">
         <span class="name">
           {{ biz.name }}
@@ -34,7 +34,11 @@ title: Home
 
 <script type="text/javascript">
 var options = {
-      valueNames: [ 'name', 'location' ]
+      valueNames: [
+        'name',
+        'location',
+        { data: ['comments', 'category'] }
+      ]
 };
 
 var bizList = new List('biz-list', options);
