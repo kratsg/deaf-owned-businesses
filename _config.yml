@@ -19,7 +19,7 @@ author:
 paginate:         5
 
 # Custom vars
-version:          0.1.0
+version:          0.1.1
 
 github:
   repo:           https://github.com/kratsg/deaf-owned-businesses
